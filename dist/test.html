@@ -1,0 +1,24 @@
+<html>
+<title>KCB 휴대폰 본인확인 서비스 샘플 2</title>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<script type="text/javascript">
+   function request(){
+      document.form1.action = "https://safe.ok-name.co.kr/CommonSvl";
+      document.form1.method = "post";
+      document.form1.submit();
+   }
+</script>
+</head>
+<body>
+   <form name="form1">
+   <!-- 인증 요청 정보 -->
+   <!--// 필수 항목 -->
+   <input type="hidden" name="tc" value="kcb.oknm.online.safehscert.popup.cmd.P931_CertChoiceCmd"/>   <!-- 변경불가-->
+   <input type="hidden" name="cp_cd" value="V47630000000">   <!-- 회원사코드 -->
+   <input type="hidden" name="site_name" value="makepin">   <!-- 토큰 --> 
+   <input type="hidden" name="mdl_tkn" value="6194a54294274c1793664f7b006b2f65">   
+   <!-- 필수 항목 //-->   
+   </form>
+</body>
+</html>

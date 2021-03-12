@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <script>
+        var call_axios_data = ''
+        call_axios();
+
+        function call_axios(){
+            call_axios_data = opener.parent_function();
+        }
+
+        function child_function(val){
+            console.log(document.getElementById('mdl_tkn') )
+            document.getElementById('mdl_tkn').value = val
+            document.form1.action = "https://safe.ok-name.co.kr/CommonSvl";
+            document.form1.method = "post";
+            document.form1.submit();
+        }
+
+        opener.popup = this;
+        document.addEventListener("DOMContentLoaded", function(){
+            if(location.search != ''){
+                opener.lastMdlTkn_function(location.search);
+                window.close();
+            } else {
+                child_function(call_axios_data)
+            }
+        });
+    </script>
+</head>
+<body>
+    <form name="form1">
+        <!--// 필수 항목 -->
+        <input type="hidden" name="tc" value="kcb.oknm.online.safehscert.popup.cmd.P931_CertChoiceCmd"/><!-- 변경불가-->
+        <input type="hidden" name="cp_cd" value="V47630000000"><!-- 회원사코드 -->
+        <input type="hidden" name="site_name" value="makepin"><!-- 토큰 --> 
+        <input type="hidden" name="mdl_tkn" id="mdl_tkn" value="">   
+        <!-- 필수 항목 //-->   
+    </form>
+</body>
+</html>
